@@ -32,11 +32,17 @@ export default function Navbar({
                             <Link className="nav-link" to="/about">{aboutText}</Link>
                         </li>
                     </ul>
-                    {/* Single Toggle Switch */}
+                    {/* Color Mode Toggle Switches */}
+                    <div className="d-flex">
+                        <div className="bg-primary rounded mx-2" onClick={() => toggleMode('primary')} style={{ height: '30px', width: '30px', cursor: 'pointer' }}></div>
+                        <div className="bg-danger rounded mx-2" onClick={() => toggleMode('danger')} style={{ height: '30px', width: '30px', cursor: 'pointer' }}></div>
+                        <div className="bg-success rounded mx-2" onClick={() => toggleMode('success')} style={{ height: '30px', width: '30px', cursor: 'pointer' }}></div>
+                        <div className="bg-warning rounded mx-2" onClick={() => toggleMode('warning')} style={{ height: '30px', width: '30px', cursor: 'pointer' }}></div>
+                    </div>
                     <div className={`form-check form-switch text-${mode === 'light' ? 'dark' : 'light'}`}>
                         <input
                             className="form-check-input"
-                            onClick={toggleMode}
+                            onClick={() => toggleMode(null)}
                             type="checkbox"
                             id="darkModeSwitch"
                         />
